@@ -11,16 +11,27 @@ session_start();
     <script src="../js/parse.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../js/group.js"></script>
 </head>
 <body>
 <div id="container">
     <div id="groups-header" class="contentHeader">
+        <div id="group-name">
         <?php
             echo $_SESSION["selectedGroup"];
         ?>
+        </div>
         Members
     </div>
+
+    <table id="members-table" class="contentTable">
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 </div>
 
 </body>
