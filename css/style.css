@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Sofia;
+    src: url("../fonts/Sofia/Sofia.ttf");
+}
+
+html, body
+{
+    padding:0;
+    margin:0;
+    background:#E9EAED;
+}
+
+#title
+{
+    display:block;
+    width:100%;
+    text-align:center;
+    font-family: Sofia;
+    font-size:50px;
+    background:white;
+    padding:10px;
+
+}
+
+#tagline
+{
+    display:block;
+    width:100%;
+    text-align: center;
+    font-family: Sofia;
+    font-size:20px;
+    background:white;
+    padding:10px;
+}
+
+#login
+{
+    display:block;
+    margin:40px auto;
+    padding:40px;
+    width:300px;
+    height:300px;
+    background:white;
+}
+
+#login form input
+{
+    display:block;
+    margin:20px auto;
+    padding:2px;
+}
