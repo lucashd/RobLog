@@ -18,13 +18,15 @@ $(function() {
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) {
                     var object = results[i];
-                    $('#study-stream-table > tbody:last').append('<tr><td>' + group_link + '</td></tr>');
+                    $('#study-stream-table > tbody:last').append('<tr><td>' + group_link + '</td><td></td></tr>');
                 }
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+
     }
 
     $("#add-group-dialog").dialog({
@@ -70,24 +72,75 @@ $(function() {
     {
         var GroupObject = Parse.Object.extend("GroupObject");
         var query = new Parse.Query(GroupObject);
+        var group_names = [];
+        var group_hours = [];
 
         query.find({
             success: function(results) {
-                var new_table = "";
+                var new_table_body = "";
+
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) {
                     var object = results[i];
                     var group_name = object.get('groupName');
                     var group_link = "<a class='groupLink' href='clickedGroup.php?groupName=" + group_name + "'>" + group_name + "</a>";
 
-                    new_table += '<tr><td>' + group_link + '</td></tr>';
+                    group_names.push(group_name);
+                    group_hours.push(i);
+                    new_table_body += '<tr>' +
+                        '<td>' + group_link + '</td></tr>';
                 }
-                $("#groups-table tbody").html(new_table);
+
+                $("#groups-table tbody").html(new_table_body);
 
                 // For table row clicks
                 $("tr").on("click", function() {
                     window.location = $(this).find('a').attr('href');
                 });
+
+                $('#groups-chart').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Top Groups'
+                    },
+                    xAxis: {
+                        categories: group_names,
+                        title: {
+                            text: null
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Hours',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
+                        }
+                    },
+                    tooltip: {
+
+                    },
+                    plotOptions: {
+                        bar: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+
+                    credits: {
+                        enabled: false
+                    },
+                    series: [{
+                        name: "Hours",
+                        data: group_hours
+                    }]
+                });
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);

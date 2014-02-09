@@ -18,12 +18,41 @@ a
     color: black;
 }
 
+nav
+{
+    height:40px;
+    width:100%;
+    font-family: Sofia;
+    background:#7c9e46;
+    margin:0;
+    padding:0;
+}
+
+nav ul
+{
+    list-style-type:none;
+    margin:0 auto;
+    text-align:center;
+}
+
+nav ul li
+{
+    color:white;
+    display:inline-block;
+    height:40px;
+    padding:0;
+    width:100px;
+}
+
+#logo
+{
+    height: 28px;
+    width: 81px;
+}
 #container
 {
     margin:50px auto;
-
-    background:white;
-    height:50%;
+    height:auto;
     width:80%;
     padding:0;
 }
@@ -80,6 +109,12 @@ a
     font-family: Sofia;
 }
 
+#groups-chart
+{
+    height: 400px;
+    width: 400px;
+    margin:10px auto;
+}
 #groups-header
 {
     background:white;
@@ -105,6 +140,10 @@ a
     padding:0;
 }
 
+#groups-chart
+{
+    width:100%;
+}
 #groups-table tbody tr
 {
     display:block;
@@ -162,6 +201,8 @@ a
     width:100%;
     margin:0;
     padding:0;
+    background:white;
+
 }
 
 .contentTable tbody tr
@@ -176,7 +217,6 @@ a
 
 .contentTable tbody tr td
 {
-    display:block;
     width:100%;
     height:30px;
     padding:0;
@@ -200,3 +240,5 @@ a
     display:inline-block;
     float:left;
 }
+
+
