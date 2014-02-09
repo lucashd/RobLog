@@ -18,8 +18,6 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="../js/scripts.js"></script>
 
-
-
 </head>
 <body>
 <!--
@@ -50,26 +48,26 @@
         <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panhellenic <b class="caret"></b></a>
-                <ul class="dropdown-menu" id="panhellenic">
+                <ul class="dropdown-menu" id="panhellenic-dd">
                     <li><a href="#">Kappa Alpha Theta</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IFC <b class="caret"></b></a>
-                <ul class="dropdown-menu" id="ifc">
+                <ul class="dropdown-menu" id="ifc-dd">
                     <li><a href="#">Phi Sig</a></li>
                 </ul>
             </li>
             <li><a href="#"><img id="logo" src="../img/logo.png"></a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">USFC <b class="caret"></b></a>
-                <ul class="dropdown-menu" id="usfc">
+                <ul class="dropdown-menu" id="usfc-dd">
                     <li><a href="#">Chi Delta Theta</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sports <b class="caret"></b></a>
-                <ul class="dropdown-menu" id="sports">
+                <ul class="dropdown-menu" id="sports-dd">
                     <li><a href="#">Men's Soccer</a></li>
                 </ul>
             </li>
@@ -82,6 +80,7 @@
 
     <div id="groups-chart"></div>
     <div id="groups-header" class="contentHeader">
+        <div id="pad-div"></div>
         Groups
         <input id="add-group-btn" type="button" value="Add Group"/>
     </div>
@@ -105,5 +104,6 @@
     </div>
 </div>
 
+<div id="footer"></div>
 </body>
 </html>
